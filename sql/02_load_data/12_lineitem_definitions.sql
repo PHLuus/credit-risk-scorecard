@@ -1,0 +1,130 @@
+-- Adding line items to database
+USE CreditRisk;
+-- (Shoprite consolidated statement of financial position)
+-- ===== BALANCE SHEET ITEMS =====
+INSERT INTO dbo.LineItemDefinition (ItemName, StatementType, Category) VALUES
+('Property, plant and equipment',								'Balance Sheet', 'Non-Current Assets'),
+('Investment properties',										'Balance Sheet', 'Non-Current Assets'),
+('Right-of-use assets',											'Balance Sheet', 'Non-Current Assets'),
+('Intangible assets',											'Balance Sheet', 'Non-Current Assets'),
+('Equity accounted investments',								'Balance Sheet', 'Non-Current Assets'),
+('Investments at fair value through OCI',						'Balance Sheet', 'Non-Current Assets'),
+('Insurance cell captive investments - non-current',			'Balance Sheet', 'Non-Current Assets'),
+('Government bonds and bills - non-current',					'Balance Sheet', 'Non-Current Assets'),
+('Loans receivable - non-current',								'Balance Sheet', 'Non-Current Assets'),
+('Deferred income tax assets',									'Balance Sheet', 'Non-Current Assets'),
+('Trade and other receivables - non-current',					'Balance Sheet', 'Non-Current Assets'),
+('Total non-current assets',									'Balance Sheet', 'Non-Current Assets'),
+-- Current assets
+('Inventories',													'Balance Sheet', 'Current Assets'),
+('Trade and other receivables - current',						'Balance Sheet', 'Current Assets'),
+('Current income tax assets',									'Balance Sheet', 'Current Assets'),
+('Insurance cell captive investments - current',				'Balance Sheet', 'Current Assets'),
+('Government bonds and bills - current',						'Balance Sheet', 'Current Assets'),
+('Loans receivable - current',									'Balance Sheet', 'Current Assets'),
+('Restricted cash',												'Balance Sheet', 'Current Assets'),
+('Cash and cash equivalents',									'Balance Sheet', 'Current Assets'),
+('Assets classified as held for sale',							'Balance Sheet', 'Current Assets'),
+('Total current assets',										'Balance Sheet', 'Current Assets'),
+('Total assets',												'Balance Sheet', 'Total Assets'),
+-- Equity
+('Stated capital',												'Balance Sheet', 'Equity'),
+('Treasury shares',												'Balance Sheet', 'Equity'),
+('Reserves',													'Balance Sheet', 'Equity'),
+('Non-controlling interest',									'Balance Sheet', 'Equity'),
+('Total equity',												'Balance Sheet', 'Equity'),
+-- Non-current liabilities
+('Lease liabilities - non-current',								'Balance Sheet', 'Non-Current Liabilities'),
+('Borrowings - non-current',									'Balance Sheet', 'Non-Current Liabilities'),
+('Deferred income tax liabilities',								'Balance Sheet', 'Non-Current Liabilities'),
+('Employee benefits and other provisions - non-current',		'Balance Sheet', 'Non-Current Liabilities'),
+('Trade and other payables - non-current',						'Balance Sheet', 'Non-Current Liabilities'),
+('Total non-current liabilities',								'Balance Sheet', 'Non-Current Liabilities'),
+-- Current liabilities
+('Trade and other payables - current',							'Balance Sheet', 'Current Liabilities'),
+('Contract liabilities',										'Balance Sheet', 'Current Liabilities'),
+('Lease liabilities - current',									'Balance Sheet', 'Current Liabilities'),
+('Borrowings - current',										'Balance Sheet', 'Current Liabilities'),
+('Current income tax liabilities',								'Balance Sheet', 'Current Liabilities'),
+('Employee benefits and other provisions - current',			'Balance Sheet', 'Current Liabilities'),
+('Bank overdrafts and other short-term facilities',				'Balance Sheet', 'Current Liabilities'),
+('Liabilities directly associated with assets held for sale',	'Balance Sheet', 'Current Liabilities'),
+('Total current liabilities',									'Balance Sheet', 'Current Liabilities'),
+-- Totals
+('Total liabilities',											'Balance Sheet', 'Total Liabilities'),
+('Total equity and liabilities',								'Balance Sheet', 'Total Liabilities');
+
+-- (Shoprite consolidated statement of comprehensive income)
+-- ===== INCOME STATEMENT ITEMS =====
+INSERT INTO dbo.LineItemDefinition (ItemName, StatementType, Category) VALUES
+('Sale of merchandise',                               'Income Statement', 'Revenue'),
+('Alternative revenue',                               'Income Statement', 'Revenue'),
+('Interest revenue',                                  'Income Statement', 'Revenue'),
+('Revenue',                                           'Income Statement', 'Revenue'),
+('Cost of sales',                                     'Income Statement', 'Cost of Sales'),
+('Gross profit',                                      'Income Statement', 'Gross Profit'),
+('Share of profit of equity accounted investments',   'Income Statement', 'Operating Items'),
+('Depreciation and amortisation',                     'Income Statement', 'Operating Items'),
+('Employee benefits expense',                         'Income Statement', 'Operating Items'),
+('Credit impairment losses',                          'Income Statement', 'Operating Items'),
+('Other operating expenses',                          'Income Statement', 'Operating Items'),
+('Trading profit',                                    'Income Statement', 'Trading Profit'),
+('Exchange rate gain/loss',                           'Income Statement', 'Other Operating Items'),
+('Profit on lease modifications and terminations',    'Income Statement', 'Other Operating Items'),
+('Items of a capital nature',                         'Income Statement', 'Other Operating Items'),
+('Operating profit',                                  'Income Statement', 'Operating Profit'),
+('Interest received from bank account balances',      'Income Statement', 'Finance'),
+('Finance costs',                                     'Income Statement', 'Finance'),
+('Profit before income tax',                          'Income Statement', 'Profit'),
+('Income tax expense',                                'Income Statement', 'Tax'),
+('Profit from continuing operations',                 'Income Statement', 'Profit'),
+('Profit/(loss) from discontinued operations',        'Income Statement', 'Profit'),
+('Profit for the year',                               'Income Statement', 'Profit'),
+('Other comprehensive income/(loss), net of tax',     'Income Statement', 'Comprehensive Income'),
+('Total comprehensive income for the year',           'Income Statement', 'Comprehensive Income');
+
+-- (Shoprite consolidated statement of cash flows)
+-- ===== CASH FLOW ITEMS =====
+INSERT INTO dbo.LineItemDefinition (ItemName, StatementType, Category) VALUES
+-- Operating activities
+('Operating profit (cash flow basis)',                                   'Cash Flow', 'Operating Activities'),
+('Less: investment income and interest revenue earned',                  'Cash Flow', 'Operating Activities'),
+('Non-cash items',                                                       'Cash Flow', 'Operating Activities'),
+('Changes in working capital',                                           'Cash Flow', 'Operating Activities'),
+('Cash generated from operations',                                       'Cash Flow', 'Operating Activities'),
+('Interest received',                                                    'Cash Flow', 'Operating Activities'),
+('Interest paid',                                                        'Cash Flow', 'Operating Activities'),
+('Dividends received',                                                   'Cash Flow', 'Operating Activities'),
+('Dividends paid',                                                       'Cash Flow', 'Operating Activities'),
+('Income tax paid',                                                      'Cash Flow', 'Operating Activities'),
+('Net cash from operating activities',                                   'Cash Flow', 'Operating Activities'),
+-- Investing activities
+('Investment in PPE and intangibles - expansion',                        'Cash Flow', 'Investing Activities'),
+('Investment in PPE and intangibles - maintenance',                      'Cash Flow', 'Investing Activities'),
+('Payment for investment in insurance cell captive arrangements',        'Cash Flow', 'Investing Activities'),
+('Investment in assets classified as held for sale',                     'Cash Flow', 'Investing Activities'),
+('Proceeds on disposal of PPE and intangible assets',                    'Cash Flow', 'Investing Activities'),
+('Cash inflows from outstanding debtor on previously disposed subsidiary','Cash Flow', 'Investing Activities'),
+('Proceeds on disposal of assets classified as held for sale',           'Cash Flow', 'Investing Activities'),
+('Payments for government bonds and bills',                              'Cash Flow', 'Investing Activities'),
+('Proceeds from government bonds and bills',                             'Cash Flow', 'Investing Activities'),
+('Loans receivable advanced',                                            'Cash Flow', 'Investing Activities'),
+('Loans receivable repaid',                                              'Cash Flow', 'Investing Activities'),
+('Proceeds on disposal of investment in associate',                      'Cash Flow', 'Investing Activities'),
+('Investment in associate',                                              'Cash Flow', 'Investing Activities'),
+('Cash outflow on acquisition of Pingo Delivery (Pty) Ltd',              'Cash Flow', 'Investing Activities'),
+('Cash outflow on acquisition of other subsidiaries and operations',     'Cash Flow', 'Investing Activities'),
+('Net cash from investing activities',                                   'Cash Flow', 'Investing Activities'),
+-- Financing activities
+('Repayment of lease liability obligations',                             'Cash Flow', 'Financing Activities'),
+('Purchase of treasury shares',                                          'Cash Flow', 'Financing Activities'),
+('Proceeds from treasury shares disposed',                               'Cash Flow', 'Financing Activities'),
+('Repayment of short-term facilities',                                   'Cash Flow', 'Financing Activities'),
+('Repayment of borrowings',                                              'Cash Flow', 'Financing Activities'),
+('Borrowings raised',                                                    'Cash Flow', 'Financing Activities'),
+('Net cash from financing activities',                                   'Cash Flow', 'Financing Activities'),
+-- Cash reconciliation
+('Net movement in cash and cash equivalents',                            'Cash Flow', 'Cash Reconciliation'),
+('Cash and cash equivalents at beginning of year',                       'Cash Flow', 'Cash Reconciliation'),
+('Effect of exchange rate movements and hyperinflation on cash',         'Cash Flow', 'Cash Reconciliation'),
+('Cash and cash equivalents at end of year',                             'Cash Flow', 'Cash Reconciliation');

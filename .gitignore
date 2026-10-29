@@ -1,0 +1,12 @@
+   # Source documents: copyrighted, so the repo links to the company site instead
+   Financial Statements - Shoprite Holdings/
+   *.pdf
+
+   # Python
+   __pycache__/
+   *.pyc
+   .venv/
+
+   # Editor and OS
+   .vscode/
+   Thumbs.db
