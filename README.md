@@ -27,20 +27,12 @@ Deciding whether to lend to a company means reading three financial statements, 
 
 ## How it works
 
-```
-Annual financial statements (PDF)
-        |  manual capture, with validation checks
-        v
-SQL Server: statements stored as line items (company -> year -> item -> amount)
-        |  SQL views
-        v
-15 financial ratios (liquidity, leverage, coverage, profitability, cash flow)
-        |  Python (pandas) applies the scoring rules held in SQL tables
-        v
-Ratio points, category scores, overall score and grade, written back to SQL
-        |
-        v
-Power BI dashboard
+```mermaid
+flowchart TD
+    A["Annual financial statements (PDF)"] -->|"manual capture with validation checks"| B[("SQL Server<br/>statements stored as line items")]
+    B -->|"SQL views"| C["15 financial ratios<br/>liquidity, leverage, coverage, profitability, cash flow"]
+    C -->|"Python (pandas) applies the scoring rules held in SQL tables"| D[("SQL Server<br/>ratio points, category scores, overall score and grade")]
+    D --> E["Power BI dashboard"]
 ```
 
 | Layer | Tool | Responsibility |
@@ -131,5 +123,4 @@ Financial data were transcribed from Shoprite Holdings' publicly available annua
 
 ## About
 
-Built by Hugo, Business Analyst (Power BI and SQL), with a BCom in Risk Management and Economics.
-LinkedIn: www.linkedin.com/in/hugo-luus-228919418
+Built by Hugo, Business and Data Analyst (Power BI and SQL), with a BCom in Risk Management and Economics.
